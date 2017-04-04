@@ -16,7 +16,13 @@ url = request.Request('http://httpbin.org/get', headers=headers)
 res = request.urlopen(url)
 #print(res.read().decode())
 
-url = request.Request('http://httpbin.org/get', method='HEAD')
+#HEAD
+#url = request.Request('http://httpbin.org/get', method='HEAD')
+url = request.Request('http://gw.withsecurity.co.kr', method='HEAD')
 res = request.urlopen(url)
 #method 값이 HEAD면 res.read()로 읽어올 값이 없음..
+#원래는 있어야하지만 httpbin에서는 반응을 하지 않는듯..
 print(res.code)
+str1 = res.read()
+print(str1.decode('utf-8'))
+#print(res.read())
